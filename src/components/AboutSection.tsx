@@ -49,7 +49,7 @@ const AboutSection = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-xl border border-primary/30"
+                className="absolute -bottom-6 -left-6 z-20 bg-card p-4 rounded-xl shadow-xl border border-primary/30"
               >
                 <div className="text-3xl font-bold text-primary">15+</div>
                 <div className="text-sm text-muted-foreground">שנות ניסיון</div>
