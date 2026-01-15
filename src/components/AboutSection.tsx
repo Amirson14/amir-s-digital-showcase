@@ -5,7 +5,6 @@ import { FileDown, GitBranch } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const skills = [
-  { name: "React", icon: "⚛️" },
   { name: "TypeScript", icon: "📘" },
   { name: "Python", icon: "🐍" },
   { name: "Playwright", icon: "🎭" },
