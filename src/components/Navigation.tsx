@@ -45,10 +45,9 @@ const Navigation = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-2xl font-playfair font-bold"
+            className="text-2xl font-inter font-bold"
           >
-            <span className="text-gradient-gold">אמיר</span>
-            <span className="text-foreground mr-2">גרינברג</span>
+            <span className="text-gradient-teal">AG</span>
           </motion.div>
 
           {/* Desktop Navigation */}
