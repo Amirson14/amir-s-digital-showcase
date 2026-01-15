@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* Dark sophisticated theme with gold accents */
+    /* Dark sophisticated theme with teal/cyan accents */
     --background: 220 20% 8%;
-    --foreground: 45 30% 95%;
+    --foreground: 210 20% 95%;
 
     --card: 220 20% 12%;
-    --card-foreground: 45 30% 95%;
+    --card-foreground: 210 20% 95%;
 
     --popover: 220 20% 10%;
-    --popover-foreground: 45 30% 95%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 45 80% 55%;
+    --primary: 175 70% 45%;
     --primary-foreground: 220 20% 8%;
 
     --secondary: 220 15% 18%;
-    --secondary-foreground: 45 30% 90%;
+    --secondary-foreground: 210 20% 90%;
 
     --muted: 220 15% 20%;
     --muted-foreground: 220 10% 55%;
 
-    --accent: 45 70% 50%;
+    --accent: 185 65% 50%;
     --accent-foreground: 220 20% 8%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,36 +33,37 @@
 
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 45 80% 55%;
+    --ring: 175 70% 45%;
 
     --radius: 0.5rem;
 
-    /* Custom colors */
-    --gold: 45 80% 55%;
-    --gold-light: 45 75% 65%;
-    --gold-dark: 45 85% 40%;
+    /* Custom colors - Teal/Cyan theme */
+    --teal: 175 70% 45%;
+    --teal-light: 175 65% 55%;
+    --teal-dark: 175 75% 35%;
+    --cyan: 185 65% 50%;
     --dark-deep: 220 25% 5%;
     --dark-card: 220 20% 12%;
     --dark-surface: 220 18% 15%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(45 80% 55%), hsl(35 90% 45%));
+    --gradient-primary: linear-gradient(135deg, hsl(175 70% 45%), hsl(185 65% 50%));
     --gradient-dark: linear-gradient(180deg, hsl(220 25% 5%) 0%, hsl(220 20% 12%) 100%);
     --gradient-hero: linear-gradient(180deg, transparent 0%, hsl(220 25% 5% / 0.7) 50%, hsl(220 25% 5%) 100%);
     
     /* Shadows */
-    --shadow-gold: 0 0 30px hsl(45 80% 55% / 0.3);
+    --shadow-primary: 0 0 30px hsl(175 70% 45% / 0.3);
     --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.4);
-    --shadow-glow: 0 0 60px hsl(45 80% 55% / 0.15);
+    --shadow-glow: 0 0 60px hsl(175 70% 45% / 0.15);
 
     --sidebar-background: 220 20% 8%;
-    --sidebar-foreground: 45 30% 95%;
-    --sidebar-primary: 45 80% 55%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 175 70% 45%;
     --sidebar-primary-foreground: 220 20% 8%;
     --sidebar-accent: 220 15% 18%;
-    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-accent-foreground: 210 20% 90%;
     --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 45 80% 55%;
+    --sidebar-ring: 175 70% 45%;
   }
 }
 
@@ -82,19 +83,41 @@
 }
 
 @layer components {
-  .text-gradient-gold {
+  .text-gradient-primary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(45 80% 55%), hsl(35 90% 50%));
+    background-image: linear-gradient(135deg, hsl(175 70% 45%), hsl(185 65% 55%));
   }
 
+  /* Keep old class name for backwards compatibility */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(175 70% 45%), hsl(185 65% 55%));
+  }
+
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(175 70% 45%), hsl(185 80% 60%));
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-bold px-8 py-4 rounded-md transition-all duration-300;
+    box-shadow: var(--shadow-primary);
+  }
+
+  .btn-primary:hover {
+    @apply scale-105;
+    box-shadow: 0 0 40px hsl(175 70% 45% / 0.5);
+  }
+
+  /* Keep old class name for backwards compatibility */
   .btn-gold {
     @apply bg-primary text-primary-foreground font-bold px-8 py-4 rounded-md transition-all duration-300;
-    box-shadow: var(--shadow-gold);
+    box-shadow: var(--shadow-primary);
   }
 
   .btn-gold:hover {
     @apply scale-105;
-    box-shadow: 0 0 40px hsl(45 80% 55% / 0.5);
+    box-shadow: 0 0 40px hsl(175 70% 45% / 0.5);
   }
 
   .card-dark {
@@ -106,7 +129,7 @@
     @apply text-4xl md:text-5xl font-bold font-playfair mb-4;
   }
 
-  .glow-gold {
+  .glow-primary {
     box-shadow: var(--shadow-glow);
   }
 
@@ -116,7 +139,7 @@
 
   .timeline-dot {
     @apply absolute right-4 w-5 h-5 rounded-full bg-primary border-4 border-background;
-    box-shadow: var(--shadow-gold);
+    box-shadow: var(--shadow-primary);
   }
 }
 
@@ -208,9 +231,9 @@
 
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(45 80% 55% / 0.3);
+    box-shadow: 0 0 20px hsl(175 70% 45% / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(45 80% 55% / 0.5);
+    box-shadow: 0 0 40px hsl(175 70% 45% / 0.5);
   }
 }

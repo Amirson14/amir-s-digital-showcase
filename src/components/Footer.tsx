@@ -12,8 +12,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <div className="text-muted-foreground text-sm flex items-center gap-2">
-            נבנה עם <Heart className="w-4 h-4 text-primary" fill="currentColor" /> על ידי{" "}
-            <span className="text-foreground font-semibold">אמיר גרינברג</span>
+            נבנה ע"י <span className="text-foreground font-semibold">אמיר גרינברג</span>
           </div>
           
           <div className="text-muted-foreground text-sm">

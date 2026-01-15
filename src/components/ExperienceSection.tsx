@@ -72,7 +72,7 @@ const experiences = [
     icon: Users,
   },
   {
-    title: "ראש QA - צה\"ל",
+    title: "ראש תחום QA - צה\"ל",
     company: "אגף טכנולוגיות, צה\"ל",
     period: "2010 - 2013",
     highlights: [
@@ -100,61 +100,62 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium tracking-widest text-sm mb-4 block">
-            ניסיון תעסוקתי
-          </span>
           <h2 className="section-title">
-            <span className="text-gradient-gold">המסע</span> המקצועי
+            מסלול <span className="text-gradient-gold">הקריירה</span>
           </h2>
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute right-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block" />
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent transform -translate-x-1/2 hidden md:block" />
 
           {experiences.map((exp, index) => {
             const Icon = exp.icon;
+            const isLeft = index % 2 === 0;
+            
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? 60 : -60 }}
+                initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative mb-8 md:mr-16"
+                className={`relative mb-12 flex items-center ${
+                  isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
               >
-                {/* Timeline dot */}
-                <div className="absolute right-[-2.5rem] top-8 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-lg animate-glow-pulse hidden md:block" />
+                {/* Timeline Dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-lg z-10 hidden md:block" />
 
-                <div className="card-dark p-6 hover:border-primary/50 transition-all duration-300 group">
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                {/* Card */}
+                <div className={`w-full md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
+                  <div className="card-dark p-6 hover:border-primary/50 transition-all duration-300 group">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                      <div className="flex-1">
+                        <span className="text-primary font-medium text-sm px-3 py-1 bg-primary/10 rounded-full inline-block mb-2">
+                          {exp.period}
+                        </span>
                         <h3 className="text-xl font-bold text-foreground">
                           {exp.title}
                         </h3>
-                        <span className="text-primary font-medium text-sm px-3 py-1 bg-primary/10 rounded-full">
-                          {exp.period}
-                        </span>
+                        <p className="text-muted-foreground text-sm mt-1">{exp.company}</p>
                       </div>
-                      <p className="text-muted-foreground mb-4">{exp.company}</p>
-                      <ul className="space-y-2">
-                        {exp.highlights.map((highlight, hIndex) => (
-                          <li
-                            key={hIndex}
-                            className="flex items-start gap-2 text-foreground/80"
-                          >
-                            <span className="text-primary mt-1.5 text-xs">●</span>
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
                     </div>
+                    
+                    <ul className="space-y-2">
+                      {exp.highlights.map((highlight, hIndex) => (
+                        <li
+                          key={hIndex}
+                          className="flex items-start gap-2 text-foreground/80 text-sm"
+                        >
+                          <span className="text-primary mt-1.5 text-xs">●</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </motion.div>

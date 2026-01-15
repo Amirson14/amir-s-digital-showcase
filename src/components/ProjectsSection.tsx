@@ -5,37 +5,19 @@ import { ExternalLink, Github, Play, X } from "lucide-react";
 
 const projects = [
   {
-    title: "AI Agents Development Platform",
-    description: "פלטפורמה להקמה ופיתוח של AI Agents מתקדמים לארגונים",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    tags: ["Python", "LLMs", "RAG", "FastAPI"],
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "CRM App for Small Businesses Made with AI",
+    description: "מערכת CRM חכמה לעסקים קטנים - ניהול מלאי, הזמנות ולקוחות עם בינה מלאכותית",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    tags: ["React", "AI", "Inventory", "Order Management"],
+    demoVideo: "/OrderTracker.mp4",
+    live: "/OrderTracker.mp4",
   },
   {
     title: "QA Automation Framework",
     description: "תשתית אוטומציה מקיפה ב-Playwright לבדיקות E2E ו-API",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
     tags: ["TypeScript", "Playwright", "Node.js", "CI/CD"],
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    github: "https://github.com",
-  },
-  {
-    title: "Big Data Testing Suite",
-    description: "מערכת בדיקות לפלטפורמות Big Data מורכבות",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop",
-    tags: ["Python", "SQL", "MongoDB", "ETL"],
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    live: "https://example.com",
-  },
-  {
-    title: "Real Estate Analytics Tool",
-    description: "כלי ניתוח שוק נדל\"ן עם תחזיות מבוססות ML",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-    tags: ["React", "Python", "Machine Learning", "PostgreSQL"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/Amirson14?tab=repositories",
   },
 ];
 
@@ -132,15 +114,13 @@ const ProjectsSection = () => {
                     </a>
                   )}
                   {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => setSelectedVideo(project.live)}
                       className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <Play className="w-4 h-4" />
                       <span className="text-sm">צפייה</span>
-                    </a>
+                    </button>
                   )}
                 </div>
               </div>
@@ -170,11 +150,20 @@ const ProjectsSection = () => {
             className="w-full max-w-4xl aspect-video"
             onClick={(e) => e.stopPropagation()}
           >
-            <iframe
-              src={selectedVideo}
-              className="w-full h-full rounded-xl"
-              allowFullScreen
-            />
+            {selectedVideo.startsWith('/') ? (
+              <video
+                src={selectedVideo}
+                className="w-full h-full rounded-xl"
+                controls
+                autoPlay
+              />
+            ) : (
+              <iframe
+                src={selectedVideo}
+                className="w-full h-full rounded-xl"
+                allowFullScreen
+              />
+            )}
           </motion.div>
         </motion.div>
       )}
