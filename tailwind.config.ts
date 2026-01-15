@@ -17,6 +17,7 @@ export default {
         heebo: ["Heebo", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
         inter: ["Inter", "sans-serif"],
+        rubikSpray: ["RubikSprayPaint", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

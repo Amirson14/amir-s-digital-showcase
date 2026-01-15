@@ -86,7 +86,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-inter font-bold mb-6 relative z-30"
+          className="text-5xl md:text-7xl lg:text-8xl font-rubikSpray mb-6 relative z-30"
         >
           <motion.span 
             className="text-foreground ml-4 inline-block drop-shadow-lg"
