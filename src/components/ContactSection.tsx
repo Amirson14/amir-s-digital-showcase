@@ -8,7 +8,7 @@ const contactInfo = [
     icon: Phone,
     label: "טלפון",
     value: "050-280-1140",
-    href: "tel:0502801140",
+    href: "https://wa.me/972502801140",
   },
   {
     icon: Mail,

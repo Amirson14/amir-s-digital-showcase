@@ -145,7 +145,9 @@ const HeroSection = () => {
             <span>הורדת קו"ח</span>
           </motion.a>
           <motion.a
-            href="tel:0502801140"
+            href="https://wa.me/972502801140"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3 border border-primary/50 text-primary rounded-md hover:bg-primary/10 transition-all duration-300 flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
