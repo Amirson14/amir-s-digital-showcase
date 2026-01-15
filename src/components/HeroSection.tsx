@@ -86,23 +86,23 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold mb-6 relative z-30"
+          className="text-5xl md:text-7xl lg:text-8xl font-heebo font-bold mb-6 relative z-30"
         >
+          <motion.span 
+            className="text-foreground ml-4 inline-block drop-shadow-lg"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            אמיר
+          </motion.span>
           <motion.span 
             className="text-gradient-teal inline-block drop-shadow-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            גרינברג
-          </motion.span>
-          <motion.span 
-            className="text-foreground mr-4 inline-block drop-shadow-lg"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            אמיר
+            גרינברג
           </motion.span>
         </motion.h1>
 
