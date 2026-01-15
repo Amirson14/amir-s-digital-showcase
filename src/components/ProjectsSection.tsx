@@ -9,8 +9,8 @@ const projects = [
     description: "מערכת CRM חכמה לעסקים קטנים - ניהול מלאי, הזמנות ולקוחות עם בינה מלאכותית",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     tags: ["React", "AI", "Inventory", "Order Management"],
-    demoVideo: "/OrderTracker.mp4",
-    live: "/OrderTracker.mp4",
+    demoVideo: `${import.meta.env.BASE_URL}OrderTracker.mp4`,
+    live: `${import.meta.env.BASE_URL}OrderTracker.mp4`,
   },
   {
     title: "QA Automation Framework",
