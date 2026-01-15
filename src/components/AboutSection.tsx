@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { FileDown } from "lucide-react";
+import { FileDown, GitBranch } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const skills = [
@@ -12,7 +12,7 @@ const skills = [
   { name: "AI/LLMs", icon: "🤖" },
   { name: "SQL", icon: "🗄️" },
   { name: "MongoDB", icon: "🍃" },
-  { name: "Cypress", icon: "🌲" },
+  { name: "Git", icon: "git", isLucide: true },
 ];
 
 const AboutSection = () => {
@@ -127,7 +127,11 @@ const AboutSection = () => {
                     transition={{ delay: 0.4 + index * 0.05 }}
                     className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-full border border-border/50 hover:border-primary/50 transition-colors"
                   >
-                    <span>{skill.icon}</span>
+                    {skill.isLucide ? (
+                      <GitBranch className="w-4 h-4 text-primary" />
+                    ) : (
+                      <span>{skill.icon}</span>
+                    )}
                     <span className="text-sm font-medium">{skill.name}</span>
                   </motion.div>
                 ))}
