@@ -57,10 +57,10 @@ const ContactSection = () => {
             צור קשר
           </span>
           <h2 className="section-title">
-            בואו <span className="text-gradient-gold">נדבר</span>
+            מחפשים יועץ AI או <span className="text-gradient-teal">מומחה איכות</span>?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-            מחפשים יועץ AI או מומחה איכות? אשמח לשמוע על הפרויקט שלכם
+            בואו נדבר - אשמח לשמוע על הפרויקט שלכם
           </p>
         </motion.div>
 
