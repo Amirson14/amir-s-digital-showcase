@@ -53,14 +53,11 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium tracking-widest text-sm mb-4 block">
-            צור קשר
-          </span>
           <h2 className="section-title">
             מחפשים יועץ AI או <span className="text-gradient-teal">מומחה איכות</span>?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-            בואו נדבר - אשמח לשמוע על הפרויקט שלכם
+            בואו נדבר 
           </p>
         </motion.div>
 
