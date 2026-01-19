@@ -38,9 +38,6 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium tracking-widest text-sm mb-4 block">
-            פרויקטים נבחרים
-          </span>
           <h2 className="section-title">
             <span className="text-gradient-gold">העבודות</span> שלי
           </h2>
