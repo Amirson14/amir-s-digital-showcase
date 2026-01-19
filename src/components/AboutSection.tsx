@@ -98,12 +98,12 @@ const AboutSection = () => {
               אודות
             </span>
             <h2 className="section-title">
-              <span className="text-gradient-gold">הסיפור</span> שלי
+              <span className="text-gradient-gold">מה אני עושה היום</span> 
             </h2>
 
             <div className="space-y-4 text-foreground/80 text-lg leading-relaxed mb-8">
               <p>
-               כיום אני משמש כמרצה ומתרגל בקורסי פיתוח AI באוניברסיטת בן גוריון ובמכללת ניו מדיה, 
+               כיום משמש כמרצה ומתרגל בקורסי פיתוח AI באוניברסיטת בן גוריון ובמכללת ניו מדיה, 
                 וכמנהל מוצר עם דגש על AI בחברה טכנולוגית מובילות  בתחום ה-BIG DATA.
               </p>
               <p>

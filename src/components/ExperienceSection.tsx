@@ -101,7 +101,7 @@ const ExperienceSection = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">
-            מסלול <span className="text-gradient-gold">הקריירה</span>
+             <span className="text-gradient-gold">הסיפור שלי</span>
           </h2>
         </motion.div>
 
