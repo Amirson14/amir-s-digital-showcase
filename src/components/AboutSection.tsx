@@ -104,7 +104,7 @@ const AboutSection = () => {
             <div className="space-y-4 text-foreground/80 text-lg leading-relaxed mb-8">
               <p>
                כיום משמש כמרצה ומתרגל בקורסי פיתוח AI באוניברסיטת בן גוריון ובמכללת ניו מדיה, 
-                וכמנהל מוצר עם דגש על AI בחברה טכנולוגית מובילות  בתחום ה-BIG DATA.
+                וכמנהל מוצר עם דגש על AI בחברה טכנולוגית מובילה  בתחום ה-BIG DATA.
               </p>
               <p>
                 <span className="text-primary font-semibold">המשימה שלי:</span> להביא מצוינות לכל פרויקט, 
